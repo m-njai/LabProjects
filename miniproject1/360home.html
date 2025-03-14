@@ -1,0 +1,97 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360 Flower</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .empty-space {
+            height: 100px; /* Adjust the height */
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li class="gray-element"><a href="flowers.html">All occasions</a></li>
+                <li><a href="flowers.html">Anniversary</a></li>
+                <li><a href="flowers.html">Birthday</a></li>
+                <li><a href="flowers.html">Sympathy</a></li>
+                <li><a href="flowers.html">Gifts</a></li>
+                <li><a href="flowers.html">Flowers</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="home" class="hero">
+            <img src="images/rose.jpg.png" alt="Rose" class="hero-image">
+            <img src="images/360flowers.png" alt="360 Flowers" class="hero-image">
+        </section>
+
+        <div class="empty-space"></div>
+        
+        <section class="card-section">
+            <div class="card">
+                <h2>To Someone Special</h2>
+                <input type="text" placeholder="Search...">
+                <img src="images/bouquet1.jpg.png" alt="To Someone Special">
+            </div>
+            <div class="card">
+                <h2>All Favorites</h2>
+                <input type="text" placeholder="Search...">
+                <img src="images/bouquet2.png" alt="All Favorites">
+            </div>
+        </section>
+        
+        <h2>Request Special Orders</h2>
+        <form onsubmit="submitForm(event)">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+    
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+    
+            <label for="contact">Contact Number:</label><br>
+            <input type="tel" id="contact" name="contact" required><br><br>
+    
+            <label for="comments">Comments:</label><br>
+            <textarea id="comments" name="comments" rows="4" cols="50" required></textarea><br><br>
+    
+            <input type="submit" value="Submit">
+        </form>
+        
+        <h3>At 360 Flower, we believe in the magic of blossoms and the emotions they convey. Whether you're celebrating a milestone, expressing gratitude, or simply brightening someone's day, our flowers speak the language of love, joy, and beauty. 🌷
+        Every petal, every stem, and every bouquet is crafted with care and 
+            passion to bring smiles and warmth to your loved ones. 
+            From classic roses to exotic orchids, our curated selection is designed
+             to enchant and inspire.</h3> 
+        
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#use-cases">Use cases</a>
+            <a href="#explore">Explore</a>
+            <a href="#resources">Resources</a>
+        </div>
+        <div class="social-media">
+            <a href="#facebook">Facebook</a>
+            <a href="#instagram">Instagram</a>
+            <a href="#twitter">Twitter</a>
+        </div>
+        <p>&copy; 2024 360 Flower. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            alert(`Thank you, ${name}. We will be in touch shortly.`);
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

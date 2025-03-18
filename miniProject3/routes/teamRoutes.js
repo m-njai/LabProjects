@@ -35,13 +35,16 @@ router.get("/:id", (req, res) => {
 router.put("/:id", (req, res) => {
   teamController.updateTeam(req.params.id, req.body)
     .then((updatedTeam) => {
-      if (updatedTeam) {
+      if (updatedTeam && typeof updatedTeam === 'object') {
         res.status(200).send({ result: 200, data: updatedTeam });
       } else {
-        res.status(404).send({ result: 404, error: "Team not found" });
+        res.status(404).send({ result: 404, error: "Team not found or invalid data" });
       }
     })
-    .catch((err) => res.status(500).send({ result: 500, error: err.message }));
+    .catch((err) => {
+      console.error("Error updating team:", err.stack || err);
+      res.status(500).send({ result: 500, error: err.message });
+    });
 });
 
 // Route to delete a team by ID
